@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="XamarinTest.CarouselViewExample"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <AbsoluteLayout>
+        <CarouselView
+            x:Name="TheCarousel"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Hey...</x:String>
+                    <x:String>Psssst...!</x:String>
+                    <x:String>Did you check out...</x:String>
+                    <x:String>The awesome new CarouselView</x:String>
+                    <x:String>In Xamarin.Forms 4.4?!</x:String>
+                    <x:String>🎠 🎉</x:String>
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout
+                        BackgroundColor="Gray"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill">
+                        <Label
+                            FontSize="Title"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding .}"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Margin="5"
+                            HorizontalOptions="FillAndExpand"
+                            HorizontalTextAlignment="Center"
+                            Text="Green" />
+
+                    </StackLayout>
+
+
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <!--
+            IndicatorView
+            AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            IndicatorColor="LightGray"
+            IndicatorSize="10"
+            IndicatorView.ItemsSourceBy="TheCarousel"
+            SelectedIndicatorColor="Black" /
+        -->
+    </AbsoluteLayout>
+</ContentPage>

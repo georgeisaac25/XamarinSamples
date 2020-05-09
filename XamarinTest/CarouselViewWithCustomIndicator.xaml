@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="XamarinTest.CarouselViewWithCustomIndicator"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XamarinTest">
+    <AbsoluteLayout>
+        <CarouselView
+            x:Name="TheCarousel"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            ItemsSource="{Binding MyDataSource}"
+            Position="{Binding Position, Mode=TwoWay}">
+
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout
+                        BackgroundColor="Gray"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill">
+                        <Label
+                            FontSize="Title"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding Name}"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Margin="5"
+                            HorizontalOptions="FillAndExpand"
+                            HorizontalTextAlignment="Center"
+                            Text="T2" />
+
+                    </StackLayout>
+
+
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+
+        <local:CarouselIndicators
+            AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            IndicatorHeight="16"
+            IndicatorWidth="16"
+            ItemsSource="{Binding MyDataSource}"
+            Position="{Binding Position}"
+            SelectedIndicator="selected_circle.png"
+            UnselectedIndicator="unselected_circle.png" />
+
+
+
+    </AbsoluteLayout>
+</ContentPage>
