@@ -48,8 +48,16 @@
             Position="{Binding Position}"
             SelectedIndicator="selected_circle.png"
             UnselectedIndicator="unselected_circle.png" />
+        <Button
+            AbsoluteLayout.LayoutBounds="0.1,0.99,AutoSize,AutoSize"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Command="{Binding PreviousClickCommand}"
+            Text="Previous" />
 
-
-
+        <Button
+            AbsoluteLayout.LayoutBounds="0.9,0.99,AutoSize,AutoSize"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Command="{Binding NextClickCommand}"
+            Text="Next" />
     </AbsoluteLayout>
 </ContentPage>

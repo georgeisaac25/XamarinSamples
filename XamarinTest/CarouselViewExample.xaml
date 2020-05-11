@@ -44,14 +44,14 @@
             </CarouselView.ItemTemplate>
         </CarouselView>
 
-        <!--
-            IndicatorView
+
+        <IndicatorView
             AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             IndicatorColor="LightGray"
             IndicatorSize="10"
             IndicatorView.ItemsSourceBy="TheCarousel"
-            SelectedIndicatorColor="Black" /
-        -->
+            SelectedIndicatorColor="Black" />
+
     </AbsoluteLayout>
 </ContentPage>

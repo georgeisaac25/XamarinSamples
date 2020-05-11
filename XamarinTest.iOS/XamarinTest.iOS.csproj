@@ -113,6 +113,14 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\selected_circle.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\selected_circle.imageset\selected_circle.png" />
+    <ImageAsset Include="Assets.xcassets\selected_circle.imageset\selected_circle-1.png" />
+    <ImageAsset Include="Assets.xcassets\selected_circle.imageset\selected_circle-2.png" />
+    <ImageAsset Include="Assets.xcassets\unselected_circle.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\unselected_circle.imageset\unselected_circle.png" />
+    <ImageAsset Include="Assets.xcassets\unselected_circle.imageset\unselected_circle-1.png" />
+    <ImageAsset Include="Assets.xcassets\unselected_circle.imageset\unselected_circle-2.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -132,5 +140,9 @@
       <Project>{F3D24904-D30F-4183-8639-973FC5D3B157}</Project>
       <Name>XamarinTest</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\selected_circle.imageset\" />
+    <Folder Include="Assets.xcassets\unselected_circle.imageset\" />
   </ItemGroup>
 </Project>
