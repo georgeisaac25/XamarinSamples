@@ -21,6 +21,9 @@ namespace XamarinTest
 
             PreviousClickCommand = new Command(PreviousClick);
 
+            FlagForPrev = false;
+            FlagForNext = true;
+
         }
 
         void NextClick()
@@ -56,6 +59,50 @@ namespace XamarinTest
             set
             {
                 _position = value;
+
+                if(_position == MyDataSource.Count - 1)
+                {
+                    FlagForPrev = true;
+                    FlagForNext = false;
+                }
+                else if(_position == 0)
+                {
+                    FlagForPrev = false;
+                    FlagForNext = true;
+                }
+                else
+                {
+                    FlagForPrev = true;
+                    FlagForNext = true;
+                }
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _flagForPrev;
+        public bool FlagForPrev
+        {
+            get
+            {
+                return _flagForPrev;
+            }
+            set
+            {
+                _flagForPrev = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _flagForNext;
+        public bool FlagForNext
+        {
+            get
+            {
+                return _flagForNext;
+            }
+            set
+            {
+                _flagForNext = value;
                 OnPropertyChanged();
             }
         }

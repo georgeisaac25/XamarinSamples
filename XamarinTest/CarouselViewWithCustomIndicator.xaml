@@ -3,7 +3,15 @@
     x:Class="XamarinTest.CarouselViewWithCustomIndicator"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:XamarinTest">
+    xmlns:local="clr-namespace:XamarinTest"
+    xmlns:myconverter="clr-namespace:XamarinTest">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <myconverter:MyColorConverter x:Key="colorConverter" />
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <AbsoluteLayout>
         <CarouselView
             x:Name="TheCarousel"
@@ -48,7 +56,7 @@
             Position="{Binding Position}"
             SelectedIndicator="selected_circle.png"
             UnselectedIndicator="unselected_circle.png" />
-        <Button
+        <!--Button
             AbsoluteLayout.LayoutBounds="0.1,0.99,AutoSize,AutoSize"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             Command="{Binding PreviousClickCommand}"
@@ -58,6 +66,29 @@
             AbsoluteLayout.LayoutBounds="0.9,0.99,AutoSize,AutoSize"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             Command="{Binding NextClickCommand}"
-            Text="Next" />
+            Text="Next" /-->
+
+        <Label
+            AbsoluteLayout.LayoutBounds="0.1,0.99,AutoSize,AutoSize"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontSize="20"
+            Text="Prev"
+            TextColor="{Binding FlagForPrev, Converter={StaticResource colorConverter}}">
+
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PreviousClickCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+            AbsoluteLayout.LayoutBounds="0.9,0.99,AutoSize,AutoSize"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontSize="20"
+            Text="Next"
+            TextColor="{Binding FlagForNext, Converter={StaticResource colorConverter}}">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NextClickCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
     </AbsoluteLayout>
 </ContentPage>
